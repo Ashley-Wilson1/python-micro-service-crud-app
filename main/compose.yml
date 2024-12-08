@@ -1,0 +1,23 @@
+services:
+   backend:
+      build:
+         context: .
+         dockerfile: Dockerfile
+      ports:
+         - 8001:5000
+      volumes:
+         - .:/app
+      depends_on:
+         - db
+      command: python main.py
+   db:
+      image: mysql
+      restart: always
+      environment:
+         MYSQL_DATABASE: main
+         MYSQL_PASSWORD: root
+         MYSQL_ROOT_PASSWORD: root
+      volumes:
+         - .dbdata:/var/lib/mysql
+      ports:
+         - 33067:3306
