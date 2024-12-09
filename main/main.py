@@ -17,7 +17,7 @@ migrate = Migrate(app, db)  # Initialize Flask-Migrate
 CORS(app)
 
 # Define models
-class Products(db.Model):
+class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=False)
     title = db.Column(db.String(200))
     image = db.Column(db.String(200))
@@ -35,4 +35,4 @@ def index():
     return 'hello'
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5001)
+    app.run(debug=True, host='0.0.0.0')

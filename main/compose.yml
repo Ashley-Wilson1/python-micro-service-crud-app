@@ -4,7 +4,7 @@ services:
          context: .
          dockerfile: Dockerfile
       ports:
-         - 8001:5001
+         - 8001:5000
       volumes:
          - .:/app
       depends_on:
@@ -16,10 +16,13 @@ services:
          context: .
          dockerfile: Dockerfile
       command: "python consumer.py"
+
       depends_on:
          - db
+
    db:
-      image: mysql
+      image: mysql:8.0
+
       restart: always
       environment:
          MYSQL_DATABASE: main
