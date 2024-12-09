@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-7rhg-1ll+8&7gxh3)z8^aa!hlf&y$99g2jn7hhu63)n78(-rnq
 DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0',
-                 'localhost']
+                 'localhost',
+                 'docker.for.mac.localhost']
 
 
 # Application definition
